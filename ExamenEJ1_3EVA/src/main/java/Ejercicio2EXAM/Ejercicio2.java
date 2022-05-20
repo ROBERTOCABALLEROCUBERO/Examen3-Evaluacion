@@ -115,6 +115,7 @@ public class Ejercicio2 extends javax.swing.JFrame {
     private void CalculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CalculaActionPerformed
         // TODO add your handling code here:
         double precio, precio_final, iva, unidades;
+        //Declaro las variables con las que voy a trabajar cuando presione el boton
         try {
             precio = Double.parseDouble(Precio.getText());
             unidades = Double.parseDouble(Unidades.getText());
@@ -123,12 +124,14 @@ public class Ejercicio2 extends javax.swing.JFrame {
             precio_final = precio_final - (precio_final * descuento);
             iva = Double.parseDouble(Iva.getText()) / 100;
             precio_final = precio_final - (precio_final * iva);
+            //Calculo el precio final segun los datos dados haciendo un parse double y lo imprimo en la etiqueta
             Imprimirresul.setText("El precio final del producto es: " + precio_final);
         } catch (NumberFormatException b) {
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al hacer la operacion con los datos introducidos");
         } catch (Exception e){
         
              JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+             //Para las excepciones hago que salte una ventana de informacion con los mensajes
         }
 
     }//GEN-LAST:event_CalculaActionPerformed
